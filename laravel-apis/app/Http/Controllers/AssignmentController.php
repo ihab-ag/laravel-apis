@@ -46,7 +46,9 @@ class AssignmentController extends Controller
         // concat into result
         $result=$letters.$numbers;
         // return result
-        return $result;
+        return response()->json([
+            $str=>$result
+        ]);
         }
         
         // function to separate number 
