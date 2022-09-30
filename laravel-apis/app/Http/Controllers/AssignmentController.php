@@ -70,4 +70,27 @@ class AssignmentController extends Controller
             $result=array_reverse($result);
             return $result;
         }
+
+        // covert numbers in string to binary
+        function numToBinary($str){
+            // regex to match all digits
+            $pattern = "/[\d]+/";
+            // match digits and get start position of match
+            preg_match_all($pattern, $str, $matches, PREG_OFFSET_CAPTURE);
+            // clean match array (data returns in index 0 of array)
+            $matches=$matches[0];
+            // get string length
+            $str_len=strlen($str);
+            // get negative position of each match so when we replace the number the position 
+            // of other matches won't change due to change of string length
+            foreach($matches as $key=>$match){
+                $matches[$key][1]=$match[1]-$str_len;
+            }
+            // replace match with it's binary equivelant
+            foreach($matches as $match){
+                $str=substr_replace($str, decbin($match[0]), $match[1],strlen($match[0]));
+            }
+            // return result
+            return $str;
+        }
 }
