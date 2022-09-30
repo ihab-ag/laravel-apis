@@ -48,4 +48,23 @@ class AssignmentController extends Controller
         // return result
         return $result;
         }
+        
+        // function to separate number 
+        function separateNumber($num){
+            // divisor
+            $m=10;
+            // result array
+            $result=[];
+            // get modulo till number reaches limit
+            while($num!=$num%$m){
+                $n=$num%$m;
+                $result[]=$n;
+                $num-=$n;
+                $m*=10;
+            }
+            $result[]=$num;
+            // reverse array
+            $result=array_reverse($result);
+            return $result;
+        }
 }
