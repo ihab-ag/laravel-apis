@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AssignmentController extends Controller
 {
     // function to sort string alphabet and numerical values prioritizing alphabets and alphabets with lower case
-    function sortString($str){
+    function sortString($str=""){
         // get lower case letters
         preg_match_all('/[a-z]/',$str , $lowers);
         // get all letters
@@ -50,7 +50,7 @@ class AssignmentController extends Controller
         }
         
         // function to separate number 
-        function separateNumber($num){
+        function separateNumber($num=0){
             // divisor
             $m=10;
             // result array
