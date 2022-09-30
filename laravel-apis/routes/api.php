@@ -14,6 +14,8 @@ Route::get('/separate_number/{num?}',[AssignmentController::class,'separateNumbe
 
 Route::get('/number_to_binary/{str?}',[AssignmentController::class,'numToBinary']);
 
+Route::get('prefix_calculator/{str?}',[AssignmentController::class,'prefixCalc']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
