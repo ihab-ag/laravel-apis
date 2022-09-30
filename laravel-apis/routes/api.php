@@ -10,6 +10,8 @@ Route::get("/test",function (){
 
 Route::get('/sort_string/{str}',[AssignmentController::class,'sortString']);
 
+Route::get('/separate_number/{num}',[AssignmentController::class,'separateNumber']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
