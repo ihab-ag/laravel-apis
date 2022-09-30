@@ -52,7 +52,7 @@ class AssignmentController extends Controller
         // function to separate number 
         function separateNumber($num=0){
             // check if input is integer
-            if(is_numeric($num))
+            if(is_int($num)!=1)
                 return "must be integer";
             // divisor
             $m=10;
