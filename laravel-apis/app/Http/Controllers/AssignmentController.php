@@ -97,6 +97,8 @@ class AssignmentController extends Controller
 
         // prefix calculator
         function prefixCalc($str){
+            // replace the '%20' in url with spaces
+            $str=str_replace('%20',' ',$str);
             // get operator at begining of string
             $operator=$str[0];
             // regex to get numbers in the string negatice and positive
