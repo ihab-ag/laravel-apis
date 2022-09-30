@@ -72,7 +72,7 @@ class AssignmentController extends Controller
         }
 
         // covert numbers in string to binary
-        function numToBinary($str){
+        function numToBinary($str=""){
             // regex to match all digits
             $pattern = "/[\d]+/";
             // match digits and get start position of match
