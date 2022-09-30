@@ -92,4 +92,35 @@ class AssignmentController extends Controller
             // return result
             return $str;
         }
+
+        // prefix calculator
+        function prefixCalc($str){
+            // get operator at begining of string
+            $operator=$str[0];
+            // regex to get numbers in the string negatice and positive
+            $pattern = "/[-]{0,1}[\d]+/";
+            preg_match_all($pattern, $str, $matches);
+            // clean array
+            $matches=$matches[0];
+            // initialize sum
+            $sum=0;
+            // initialize product
+            $product=1;
+            // check operator type and loop through number accordingly
+            if($operator=='+'){
+                foreach($matches as $match){
+                    $sum+=$match;
+                }
+                return $sum;
+            }
+            elseif($operator=='*'){
+                foreach($matches as $match){
+                    $product*=$match;
+                }
+                return $product;
+            }
+            // operator is invalid
+            else
+            return "syntax error";
+        }
 }
